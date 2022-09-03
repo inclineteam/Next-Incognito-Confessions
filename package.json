@@ -9,13 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "alpinejs": "^3.10.3",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwindcss": "^3.1.8"
   },
   "devDependencies": {
+    "@types/alpinejs": "^3.7.0",
+    "@types/node": "18.7.14",
+    "@types/react": "^18.0.18",
+    "@types/react-dom": "^18.0.6",
     "eslint": "8.23.0",
-    "eslint-config-next": "12.2.5"
+    "eslint-config-next": "12.2.5",
+    "typescript": "4.8.2"
   }
 }

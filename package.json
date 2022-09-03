@@ -9,19 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "akar-icons": "^1.9.20",
     "alpinejs": "^3.10.3",
     "next": "12.2.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tailwindcss": "^3.1.8"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@types/alpinejs": "^3.7.0",
     "@types/node": "18.7.14",
     "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
+    "autoprefixer": "^10.4.8",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8",
     "typescript": "4.8.2"
   }
 }

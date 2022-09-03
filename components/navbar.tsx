@@ -1,6 +1,6 @@
 export const Navbar = () => {
     return (
-        <div>
+        <div className="mx-auto max-w-[1400px] ">
             <div x-data="{ mobileNavDropdown: false }" className="responsive-padding relative mx-auto w-full max-w-6xl py-8">
                 <div className="flex items-center justify-between text-zinc-200">
 
@@ -8,7 +8,7 @@ export const Navbar = () => {
                         <span className="rounded-full bg-zinc-800 px-2 py-1">
                             <i className="ai-glasses"></i>
                         </span>
-                        <span className="font-[Quicksand]">Incognito</span>
+                        <span className="font-quicksand font-bold">Incognito</span>
                     </a>
 
                     <nav className="hidden space-x-12 font-medium sm:block">

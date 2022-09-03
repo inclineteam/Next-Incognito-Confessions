@@ -4,8 +4,7 @@ export const Hero = () => {
             <div>
                 <h1
                     className="text-3xl font-semibold tracking-tight text-zinc-300 sm:text-5xl md:text-center md:text-6xl lg:text-7xl">
-                    Confess
-                    <span className="bg-shark-lighter inline-block rounded-lg px-2 py-1 text-[#FFFBD7] shadow-xl md:px-4 md:py-3">
+                    Confess <span className="bg-shark-lighter inline-block rounded-lg px-2 py-1 text-[#FFFBD7] shadow-xl md:px-4 md:py-3">
                         without
                     </span> them
                     <span
@@ -17,8 +16,7 @@ export const Hero = () => {
                             <i className="ai-check"></i>
                             <span>Confessions are anonymous</span>
                         </span>
-                    </span>
-                    who you are.
+                    </span> who you are.
                 </h1>
             </div>
 

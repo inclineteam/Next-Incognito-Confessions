@@ -3,6 +3,7 @@ import { AuthLayout } from '../components/auth-layout'
 import { Layout } from '../components/layout'
 import { Navbar } from '../components/navbar'
 
+
 const About: NextPage = () => {
     return (
         <Layout>
@@ -23,11 +24,13 @@ const About: NextPage = () => {
                         </p>
                             <br/><br/>
                         <p className="text-3xl text-start font-extralight">
-                            Moreover, Incognito Confessions is a Laravel test and starter built by
+                            Incognito Confessions was originally a Laravel test and starter built by
                             Incline Start-up Agency for future team project.
                             Testing Git and framework functions.
+                            <br /><br />
+                            However, we decided to migrate it in Next.js, Prisma, and TypeScript for learning purposes.
                             <br/> <br/>
-                            In addition, anyone is open to use this laravel template for
+                            In addition, anyone is open to use this template for
                             personal and commercial use.
                         </p>
                     </section>

@@ -1,3 +1,6 @@
+import Link from "next/link"
+
+
 export const Navbar = () => {
     return (
         <div className="mx-auto max-w-[1400px] ">
@@ -12,8 +15,12 @@ export const Navbar = () => {
                     </a>
 
                     <nav className="hidden space-x-12 font-medium sm:block">
-                        <a>Confessions</a>
-                        <a>About</a>
+                        <ul className="inline-flex">
+                            <li className="space-x-5">
+                                <Link href="/">Confessions</Link>
+                                <Link href="/about">About</Link>
+                            </li>
+                        </ul>
                         <a>
                             <button className="rounded bg-zinc-800 py-3 px-5 font-medium text-[#FFFBD7]">
                                 Sign in

@@ -14,8 +14,8 @@ export const Footer = () => {
                 <div className="flex flex-col">
                     <p className="text-[1rem] font-medium text-white">Open Source</p>
                     <ul>
-                        <li className="flex mt-4"><a className="text-left">Github</a></li>
-                        <li className="flex mt-4"><a>Bug Report</a></li>
+                        <li className="flex mt-4"><a target="_blank" href="https://github.com/inclineteam/Next-Incognito-Confessions" className="text-left">Github</a></li>
+                        <li className="flex mt-4"><a target="_blank" href="https://github.com/inclineteam/Next-Incognito-Confessions/issues/new">Bug Report</a></li>
                     </ul>
                 </div>
 
@@ -23,11 +23,11 @@ export const Footer = () => {
                     <p className="text-[1rem] font-medium text-white">Contact</p>
                     <ul>
                         <li className="flex mt-4"><a className="text-left" href="
-                            {{ route('discord') }}
-                        ">Discord</a></li>
-                        <li className="flex mt-4"><a href="
-                            {{ route('discord') }}
-                        ">Facebook</a></li>
+                            {{ route('discord') }} 
+                        ">Discord</a></li> 
+                        <li className="flex mt-4">
+                            <a href="https://www.facebook.com/incognitoconfession" target="_blank">Facebook</a>
+                        </li>
                     </ul>
                 </div>
 

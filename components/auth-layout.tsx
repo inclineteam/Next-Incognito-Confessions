@@ -23,7 +23,7 @@ export const AuthLayout = ({ title, children } : LayoutProps) => {
                         <span className="font-semibold">Incognito</span>
                     </a>
 
-                    <header className="px-8 pt-6 text-2xl font-semibold text-zinc-300">
+                    <header className="px-8 flex pt-6 text-2xl font-semibold text-zinc-300">
                         <p>{ title }</p>
                     </header>
 

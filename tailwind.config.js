@@ -25,7 +25,7 @@ module.exports = {
       colors: {
         primary: '#4067bd',
         shark: '#1B1C21',
-        'shark-lighter': '#292A2F' 
+        'shark-lighter': '#292A2F',
       }
     },
   },

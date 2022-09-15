@@ -3,7 +3,7 @@ import { Hero } from '../components/landing/hero'
 import { Layout } from '../components/layout'
 import { Navbar } from '../components/navbar'
 
-const Home: NextPage = () => {
+const Landing: NextPage = () => {
   return (
     <Layout>
       <div className="h-auto min-h-screen bg-zinc-900">
@@ -26,4 +26,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Landing

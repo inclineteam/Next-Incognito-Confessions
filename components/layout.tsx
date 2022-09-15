@@ -1,7 +1,7 @@
 import React from 'react'
 import { Footer } from './Footer'
 import { HeadComponent } from './headComponent'
-import { Navbar } from './navbar'
+import { Toaster } from 'react-hot-toast';
 
 interface LayoutProps {
     children : React.ReactNode

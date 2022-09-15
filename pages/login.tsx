@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { AuthLayout } from '../components/auth-layout'
-import { getProviders } from 'next-auth/react'
+import { getCsrfToken, getProviders, getSession } from 'next-auth/react'
 import React, { useEffect, useState } from 'react'
 import { AppProviders } from 'next-auth/providers'
 import { signIn } from "next-auth/react"
@@ -11,31 +11,19 @@ import toast, { Toaster } from 'react-hot-toast';
 
 interface LoginProps {
     providers: AppProviders
+    csrfToken: string
 }
 
-const Login : NextPage<LoginProps> = ({ providers }) => {
-    const [email, setEmail] = useState('')
-
-    const sendLoginVerification = (e:any) => {
-        e.preventDefault()
-        // Notice, we are also redirecting users to the protected route instead of the homepage after signing in. 
-        signIn('email', { callbackUrl: '/home', email})
-    }
+const Login : NextPage<LoginProps> = ({ providers, csrfToken }) => {
 
     return (
         <>
             <AuthLayout title='Log In'>
-                <form className='flex flex-col items-center justify-center px-8 pt-5' onSubmit={sendLoginVerification}>
+                <form method='post' action='/api/auth/signin/email' className='flex flex-col items-center justify-center px-8 pt-5'>
+                    <input name='csrfToken' type='hidden' defaultValue={csrfToken} />
                     <div className="group mt-2 mb-5 flex w-full items-center space-x-4 rounded bg-zinc-700/50 px-4 py-2 duration-150">
                         <i className="ai-envelope text-white/50 group-focus-within:text-white/80"></i>
-                        <input
-                        type='email'
-                        value={email}
-                        required
-                        className='flex-1 bg-transparent p-0 text-white/80 outline-none'
-                        onChange={e => setEmail(e.target.value)}
-                        />
-
+                        <input type='email' id='email' name='email' required className='flex-1 bg-transparent p-0 text-white/80 outline-none' />
                     </div>
                     <button type="submit"
                         className="w-[50%] rounded border-t border-indigo-500 bg-indigo-600 py-3 px-4 font-medium text-white duration-150">
@@ -50,10 +38,12 @@ const Login : NextPage<LoginProps> = ({ providers }) => {
                         {Object.values(providers).map((provider) => {
                             if(provider.id != 'email'){
                                 return (
-                                    <ProviderButton key={provider.name} provider={provider.id}>
-                                        <i className={`ai-${provider.id}-fill justify-self-end text-lg ${provider.id}`}></i>
-                                        <span>Continue with {provider.name}</span>
-                                    </ProviderButton>
+                                    <div key={provider.name}>
+                                        <ProviderButton provider={provider.id}>
+                                            <i className={`ai-${provider.id}-fill justify-self-end text-lg ${provider.id}`}></i>
+                                            <span>Continue with {provider.name}</span>
+                                        </ProviderButton>
+                                    </div>
                                 )
                             }
                         })}
@@ -67,11 +57,24 @@ const Login : NextPage<LoginProps> = ({ providers }) => {
 export default Login
 
 export async function getServerSideProps(context:any) {
+
     const providers = await getProviders()
+    const csrfToken = await getCsrfToken(context)
+    const { req } = context
+    const session = await getSession({ req })
+
+    if(session){
+        return {
+            redirect: {
+                destination: '/home',
+            }
+        }
+    }
     
     return {
         props: {
-            providers
+            providers,
+            csrfToken
         }
     }
 

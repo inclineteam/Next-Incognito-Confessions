@@ -13,6 +13,7 @@
     "@prisma/client": "^4.3.1",
     "akar-icons": "^1.9.20",
     "alpinejs": "^3.10.3",
+    "js": "^0.1.0",
     "mysql": "^2.18.1",
     "next": "12.2.5",
     "next-auth": "^4.10.3",

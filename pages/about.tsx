@@ -3,6 +3,7 @@ import { AuthLayout } from "../components/auth-layout";
 import { Layout } from "../components/layout";
 import { Navbar } from "../components/navbar";
 
+
 const About: NextPage = () => {
   return (
     <Layout>

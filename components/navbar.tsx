@@ -32,7 +32,6 @@ export const Navbar = () => {
           <nav className="hidden space-x-12 font-medium sm:block">
             <a>Confessions</a>
             <a>About</a>
-            <a>
               {!session ? (
                 <Link href="/login">
                   <a className="rounded bg-zinc-800 py-3 px-5 font-medium text-[#FFFBD7]">
@@ -47,7 +46,6 @@ export const Navbar = () => {
                   Logout
                 </button>
               )}
-            </a>
           </nav>
 
           <button className="block sm:hidden">

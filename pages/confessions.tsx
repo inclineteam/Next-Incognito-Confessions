@@ -1,9 +1,14 @@
-import { NextPage } from "next";
+import { GetServerSideProps, NextPage } from "next";
 import { ConfessionsHeader } from "../components/confessions/confessions-header";
+import ConfessionCard from "../components/home/confession-card";
 import { Layout } from "../components/layout";
 import { ProtectedComponent } from "../components/protectedcomponent";
+import getHandler from "../prisma/handler";
 
-const Confessions: NextPage = () => {
+const Confessions: NextPage<{confessions : any}> = ({  confessions }) => {
+
+  const confessionData = JSON.parse(confessions);
+
   return (
     <Layout>
       <ProtectedComponent>
@@ -11,9 +16,9 @@ const Confessions: NextPage = () => {
           <ConfessionsHeader />
 
           <main>
-            <h1 className="mt-10 text-center text-3xl text-zinc-300">
-              Still not done
-            </h1>
+            {confessionData.map((confession: any) => (
+                      <ConfessionCard confession={confession} />
+            ))}
           </main>
         </div>
       </ProtectedComponent>
@@ -22,3 +27,15 @@ const Confessions: NextPage = () => {
 };
 
 export default Confessions;
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+
+  const { getConfessions } = getHandler();
+  const confessions = await getConfessions();
+  
+  return {
+    props: {
+      confessions: JSON.stringify(confessions),
+    },
+  };
+}

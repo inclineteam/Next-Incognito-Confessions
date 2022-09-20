@@ -50,6 +50,7 @@ model User {
   confessions     Confession[]
   replies   Reply[]
   reacts    Reactions[]
+  @@unique([id, name])
 }
 
 model VerificationToken {
@@ -68,8 +69,9 @@ model Confession {
   content   String
   reacts    Int 
   reacted_users Reactions[]
-  author    User     @relation(fields: [authorId], references: [id])
+  author    User     @relation(fields: [authorId, authorName], references: [id, name])
   authorId  String
+  authorName String
   replies   Reply[]  
 }
 

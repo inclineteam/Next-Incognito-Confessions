@@ -10,7 +10,7 @@ interface ProviderButtonProps {
 
 export const ProviderButton = ({ provider, children }: ProviderButtonProps) => {
   const handleSignIn = () => {
-    signIn(provider, { callbackUrl: "/home", redirect: false });
+    signIn(provider, { callbackUrl: "/home" });
   };
 
   // handleSignIn();

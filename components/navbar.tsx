@@ -30,19 +30,19 @@ export const Navbar = () => {
           </a>
 
           <nav className="hidden space-x-12 font-medium sm:block">
-            <a>Confessions</a>
-            <a>About</a>
+            <Link href="/confessions"><a>Confessions</a></Link>
+            <Link href="/about"><a>About</a></Link>
               {!session ? (
                 <Link href="/login">
                   <a className="rounded bg-zinc-800 py-3 px-5 font-medium text-[#FFFBD7]">
                     Sign In
                   </a>
                 </Link>
-              ) : (
+              ) : ( 
                 <button
                   onClick={handleLogout}
                   className="rounded bg-zinc-800 py-3 px-5 font-medium text-[#FFFBD7]"
-                >
+               >
                   Logout
                 </button>
               )}

@@ -25,7 +25,7 @@ export const Hero = () => {
 
       <div className="mt-[3rem] flex flex-wrap items-center space-x-4 sm:mt-[8rem] md:space-x-8">
         <a>
-          <button className="rounded-md border-t border-indigo-500 bg-indigo-600 px-6 py-4 text-sm font-medium text-white lg:text-base">
+          <button className="rounded-md border-t border-indigo-500 bg-indigo-600 px-6 py-4 text-sm font-medium text-white lg:text-base hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-violet-100">
             Write a confession
           </button>
         </a>

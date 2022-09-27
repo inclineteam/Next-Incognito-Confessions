@@ -30,11 +30,12 @@ export const Navbar = () => {
           </a>
 
           <nav className="hidden space-x-12 font-medium sm:block">
-            <Link href="/confessions"><a>Confessions</a></Link>
-            <Link href="/about"><a>About</a></Link>
+            <Link href="/confessions"><a className="hover:text-slate-300">Confessions</a></Link>
+            <Link href="/about"><a className="hover:text-slate-300">About</a></Link>
+
               {!session ? (
                 <Link href="/login">
-                  <a className="rounded bg-zinc-800 py-3 px-5 font-medium text-[#FFFBD7]">
+                  <a className="rounded bg-zinc-800 py-3 px-5 font-medium text-[#FFFBD7] hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-indigo-100">
                     Sign In
                   </a>
                 </Link>

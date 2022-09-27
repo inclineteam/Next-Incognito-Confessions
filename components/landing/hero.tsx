@@ -29,7 +29,7 @@ export const Hero = () => {
             Write a confession
           </button>
         </a>
-        <a className="py-4 pl-2 text-sm font-medium text-white lg:text-base">
+        <a className="py-4 pl-2 text-sm font-medium text-white lg:text-base hover:text-slate-400">
           How does it work?
         </a>
       </div>

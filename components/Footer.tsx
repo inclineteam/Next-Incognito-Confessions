@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export const Footer = () => {
   return (
     <footer className="w-full border-t border-zinc-800 bg-zinc-900 pt-8 pb-10 text-center text-sm text-zinc-400">
@@ -6,13 +8,13 @@ export const Footer = () => {
           <p className="text-[1rem] font-medium text-white">Resources</p>
           <ul>
             <li className="mt-4 flex">
-              <a className="text-left">About</a>
+              <Link href="/about"><a className="text-left hover:text-slate-200">About</a></Link>
             </li>
             <li className="mt-4 flex">
-              <a>Privacy Policy</a>
+            <Link href="/privacy"><a className="text-left hover:text-slate-200">Privacy Policy</a></Link>
             </li>
             <li className="mt-4 flex">
-              <a>Terms Of Use</a>
+            <Link href="/terms"><a className="text-left hover:text-slate-200">Terms Of Use</a></Link>
             </li>
           </ul>
         </div>
@@ -21,10 +23,10 @@ export const Footer = () => {
           <p className="text-[1rem] font-medium text-white">Open Source</p>
           <ul>
             <li className="mt-4 flex">
-              <a className="text-left">Github</a>
+            <Link href="https://github.com/inclineteam/Next-Incognito-Confessions"><a className="text-left hover:text-slate-200" target="_blank">Github</a></Link>
             </li>
             <li className="mt-4 flex">
-              <a>Bug Report</a>
+            <Link href="https://github.com/inclineteam/Next-Incognito-Confessions/issues/new"><a className="text-left hover:text-slate-200" target="_blank">Bug Report</a></Link>
             </li>
           </ul>
         </div>
@@ -33,30 +35,17 @@ export const Footer = () => {
           <p className="text-[1rem] font-medium text-white">Contact</p>
           <ul>
             <li className="mt-4 flex">
-              <a
-                className="text-left"
-                href="
-                            {{ route('discord') }}
-                        "
-              >
-                Discord
-              </a>
+            <Link href="/discord"><a className="text-left hover:text-slate-200" target="_blank">Discord</a></Link>
             </li>
             <li className="mt-4 flex">
-              <a
-                href="
-                            {{ route('discord') }}
-                        "
-              >
-                Facebook
-              </a>
+            <Link href="https://www.facebook.com/incognitoconfessions/"><a className="text-left hover:text-slate-200" target="_blank">Facebook</a></Link>
             </li>
           </ul>
         </div>
       </div>
 
       <p className="mt-10">
-        Copyright &copy; 2022 Incline Team. All Rights Reserved
+        <Link href="https://github.com/inclineteam"><a className="hover:underline underline-offset-8" target="_blank">Copyright &copy; 2022 Incline Team. All Rights Reserved</a></Link>
       </p>
     </footer>
   );
